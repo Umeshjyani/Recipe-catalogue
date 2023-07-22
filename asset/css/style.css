@@ -232,5 +232,11 @@ input[type="radio"] {
     .navbar.active .nav-links {
         display: flex;
         flex-direction: column;
+        position: absolute;
+        background-color: lightgray;
+        width: 75%;
+        top: 79px;
+        left: 70px;
+        padding: 7px;
     }
 }
