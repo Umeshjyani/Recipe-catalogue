@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Recipe Catalogue</title>
+    <link rel="stylesheet" href="./asset/css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-left">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="logo">
+                    <img src="./asset/images/Cookpal 1.png" alt="Logo">
+                </div>
+            </div>
+            <div class="navbar-right">
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Explore</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+                <div class="profile">
+                    <img src="./asset/images/Profile.png" alt="Profile Image">
+                    <!-- <i class="fa fa-cog"></i> Font Awesome icon, replace with your preferred icon library -->
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <h1>Interactive Recipe Catalogue</h1>
+            <input type="text" id="searchInput" placeholder="Search recipes...">
+            <div class="flex">
+                <button id="showAllBtn" class="active">Show All</button>
+                <button id="showVegBtn">Show Only Veg</button>
+                <button id="showNonVegBtn">Show Only Non-Veg</button>
+            </div>
+            <div class="flex">
+                <label>
+                    <input type="radio" name="ratingFilter" value="above" checked>
+                    Rating Above 4.5
+                </label>
+                <label>
+                    <input type="radio" name="ratingFilter" value="below">
+                    Rating Below 4.0
+                </label>
+            </div>
+
+        </div>
+    </header>
+
+    <main id="recipeContainer">
+        <!-- Recipe cards will be dynamically added here -->
+    </main>
+
+    <script src="./asset/script/script.js"></script>
+</body>
+
+</html>
