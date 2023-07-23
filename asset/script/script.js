@@ -119,9 +119,6 @@ const recipes = [{
     "rating": 4.9
 }
 ];
-
-
-
 const recipeContainer = document.getElementById('recipeContainer');
 const searchInput = document.getElementById('searchInput');
 const showAllBtn = document.getElementById('showAllBtn');
@@ -129,32 +126,14 @@ const showVegBtn = document.getElementById('showVegBtn');
 const showNonVegBtn = document.getElementById('showNonVegBtn');
 const ratingFilterInputs = document.querySelectorAll('input[name="ratingFilter"]');
 
-// function displayRecipes(recipesToShow) {
-//     recipeContainer.innerHTML = '';
-//     recipesToShow.forEach(recipe => {
-//         const recipeCard = document.createElement('div');
-//         recipeCard.classList.add('recipe-card');
-//         recipeCard.innerHTML = `
-//       <img src="${recipe.imageSrc}" alt="${recipe.name}">
-//       <h2>${recipe.name}</h2>
-//       <p>Type: ${recipe.type}</p>
-//       <p>Time: ${recipe.time}</p>
-//       <p>Rating: ${recipe.rating}</p>
-//       <button class="like-btn ${recipe.isLiked ? 'liked' : ''}">Like</button>
-//     `;
-//         recipeContainer.appendChild(recipeCard);
-//     });
-// }
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 const navbar = document.querySelector('.navbar');
-
 // Add event listener to the hamburger icon
 hamburger.addEventListener('click', () => {
     navLinks.classList.toggle('active');
     navbar.classList.toggle('active');
 });
-
 
 function displayRecipes(recipesToShow) {
     recipeContainer.innerHTML = '';
@@ -175,19 +154,16 @@ function displayRecipes(recipesToShow) {
     // Add event listener to the like buttons
     const likeButtons = document.querySelectorAll('.like-btn');
     likeButtons.forEach(button => {
-        button.addEventListener('click', handleLikeButtonClick);
+        // button.addEventListener('click', handleLikeButtonClick);
+        button.addEventListener('touchend', handleLikeButtonClick);
     });
 }
 
 function handleLikeButtonClick(event) {
     const button = event.target;
     const recipeId = button.getAttribute('data-recipe-id');
-
     // Toggle the 'liked' class on the button and update JSON array
     const isLiked = button.classList.toggle('liked');
-
-    // Update the corresponding recipe's 'isLiked' property in the JSON array
-    // Replace 'recipesData' with the actual variable name of your JSON array
     const recipeToUpdate = recipes.find(recipe => recipe.id === recipeId);
     if (recipeToUpdate) {
         recipeToUpdate.isLiked = isLiked;
