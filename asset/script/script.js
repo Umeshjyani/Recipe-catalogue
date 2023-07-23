@@ -154,8 +154,7 @@ function displayRecipes(recipesToShow) {
     // Add event listener to the like buttons
     const likeButtons = document.querySelectorAll('.like-btn');
     likeButtons.forEach(button => {
-        // button.addEventListener('click', handleLikeButtonClick);
-        button.addEventListener('touchend', handleLikeButtonClick);
+        button.addEventListener('click', handleLikeButtonClick);
     });
 }
 
